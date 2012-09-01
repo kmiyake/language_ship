@@ -1,5 +1,6 @@
 LangMeeting::Application.routes.draw do
-  get "home/show"
+  match 'home' => 'home#show'
+  root to: 'home#show'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
