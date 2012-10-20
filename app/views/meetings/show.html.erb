@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @meeting.user_id %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @meeting.date %>
+</p>
+
+<p>
+  <b>Start time:</b>
+  <%= @meeting.start_time %>
+</p>
+
+<p>
+  <b>End time:</b>
+  <%= @meeting.end_time %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%= @meeting.location %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @meeting.address %>
+</p>
+
+<p>
+  <b>Message:</b>
+  <%= @meeting.message %>
+</p>
+
+<p>
+  <b>Teach language:</b>
+  <%= @meeting.teach_language %>
+</p>
+
+<p>
+  <b>Study language:</b>
+  <%= @meeting.study_language %>
+</p>
+
+<p>
+  <b>Success:</b>
+  <%= @meeting.success %>
+</p>
+
+<p>
+  <b>Close:</b>
+  <%= @meeting.close %>
+</p>
+
+
+<%= link_to 'Edit', edit_meeting_path(@meeting) %> |
+<%= link_to 'Back', meetings_path %>
