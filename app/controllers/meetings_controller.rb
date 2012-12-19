@@ -1,13 +1,11 @@
 class MeetingsController < ApplicationController
   before_filter :login_required, :only => [:new, :edit, :create, :update, :destroy]
 
-  # GET /meetings
-  # GET /meetings.json
   def index
     @meetings = Meeting.order("date DESC")
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html
     end
   end
 
@@ -46,33 +44,26 @@ class MeetingsController < ApplicationController
     end
   end
 
-  # GET /meetings/1
-  # GET /meetings/1.json
   def show
     @meeting = Meeting.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html
     end
   end
 
-  # GET /meetings/new
-  # GET /meetings/new.json
   def new
     @meeting = current_user.meetings.build
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html
     end
   end
 
-  # GET /meetings/1/edit
   def edit
     @meeting = current_user.meetings.find(params[:id])
   end
 
-  # POST /meetings
-  # POST /meetings.json
   def create
     @meeting = current_user.meetings.build(params[:meeting])
     @meeting.start_time = params[:date][:start_hour] + params[:date][:start_minute]
@@ -87,8 +78,6 @@ class MeetingsController < ApplicationController
     end
   end
 
-  # PUT /meetings/1
-  # PUT /meetings/1.json
   def update
     @meeting = current_user.meetings.find(params[:id])
     @meeting.start_time = params[:date][:start_hour] + params[:date][:start_minute]
@@ -103,8 +92,6 @@ class MeetingsController < ApplicationController
     end
   end
 
-  # DELETE /meetings/1
-  # DELETE /meetings/1.json
   def destroy
     @meeting = current_user.meetings.find(params[:id])
     @meeting.destroy
