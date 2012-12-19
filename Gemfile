@@ -5,8 +5,8 @@ gem 'rails', '3.2.8'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+gem 'thin'
 gem 'sqlite3'
-
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -39,11 +39,12 @@ gem 'jquery-rails'
 gem 'twitter-bootstrap-rails', :group => :assets
 gem 'omniauth-facebook'
 
-
-group :test do
+group :development, :test do
   # rspec goodies
   gem 'rspec-rails'
+end
 
+group :test do
   # DRb server for testing frameworks
   gem 'spork'
 
@@ -57,3 +58,6 @@ group :test do
   gem 'growl'
   gem 'rb-fsevent', '~> 0.9.1'
 end
+
+gem 'letter_opener', :group => :development
+gem 'http_accept_language'

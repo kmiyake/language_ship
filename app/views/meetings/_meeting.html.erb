@@ -1,0 +1,51 @@
+<div class="span4">
+  <div class="meeting">
+    <div class="clearfix user">
+      <%= link_to "/#{meeting.user.profile_url}" do %>
+        <%= image_tag "https://graph.facebook.com/#{meeting.user.uid}/picture?type=normal",
+        class: "img-circle", size: "100x100" %>
+      <% end %>
+      <p>
+        <b><%= link_to meeting.user.name, "/#{meeting.user.profile_url}" %></b><br>
+        <span class="user-message"><%= truncate(meeting.user.message, length: 50) %></span>
+      </p>
+    </div>
+    <p class="state">
+      <% if meeting.date >= Date.today && meeting.success %>
+        <%= link_to t('.success'), meeting, class: "btn btn-success" %>
+      <% end %>
+      <% if meeting.date >= Date.today && !meeting.success %>
+        <%= link_to t('.wanted'), meeting, class: "btn btn-primary" %>
+      <% end %>
+      <% if meeting.date < Date.today || meeting.close %>
+        <%= link_to t('.close'), meeting, class: "btn btn-inverse" %>
+      <% end %>
+    </p>
+    <ul class="meeting-info">
+      <li>
+        <i class="icon-calendar"></i>
+        <%= meeting.date %>
+      </li>
+      <li>
+        <i class="icon-time"></i>
+        <%= meeting.time %>
+      </li>
+      <li>
+        <i class="icon-book"></i>
+        <%= t('.teach_language', language: t(meeting.teach_language, :scope => 'language')) %>
+      </li>
+      <li>
+        <i class="icon-pencil"></i>
+        <%= t('.study_language', language: t(meeting.study_language, :scope => 'language')) %>
+      </li>
+      <li>
+        <i class="icon-home"></i>
+        <%= meeting.location %>
+      </li>
+      <li>
+        <i class="icon-map-marker"></i>
+        <%= meeting.address %>
+      </li>
+    </ul>
+  </div>
+</div>

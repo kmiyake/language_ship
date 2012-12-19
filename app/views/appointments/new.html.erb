@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="span8 offset2">
+    <%= form_for([@meeting, @appointment]) do |f| %>
+      <% if @appointment.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@meeting.errors.count, "error") %> prohibited this meeting from being saved:</h2>
+
+          <ul>
+            <% @appointment.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <legend>言語交換相手を申し込む</legend>
+      <div class="clearfix">
+        <div class="meeting span5">
+          <%= image_tag "https://graph.facebook.com/#{@meeting.user.uid}/picture?type=normal" %>
+          <ul>
+            <li>主催者：<%= link_to @meeting.user.name, "/#{@meeting.user.profile_url}" %></li>
+            <li>日付：<%= @meeting.date %></li>
+            <li>時間： <%= @meeting.time %></li>
+            <li>場所： <%= @meeting.location %></li>
+            <li>住所： <%= @meeting.address %></li>
+          </ul>
+        </div>
+      </div>
+      <%= f.hidden_field :sender_id, value: current_user.id %>
+      <%= f.hidden_field :recipient_id, value: @meeting.user.id %>
+      <div class="field">
+        <%= f.label :message %>
+        <%= f.text_area :message, rows: "4", class: "span5" %>
+      </div>
+      <div class="actions">
+        <%= f.submit "申し込む", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>

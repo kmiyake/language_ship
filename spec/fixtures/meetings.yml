@@ -1,0 +1,25 @@
+<% 1.upto(10) do |i| %>
+  meeting_<%= i %>:
+    date: <%= i.day.since(Date.today) %>
+    start_time: "0900"
+    end_time: "1200"
+    location: "どこでも"
+    address: "どこでも"
+    message: "よろしく！"
+    teach_language: "ja"
+    study_language: "zh-TW"
+    user_id: 1
+<% end %>
+
+<% 11.upto(20) do |i| %>
+  meeting_<%= i %>:
+    date: <%= i.day.since(Date.today) %>
+    start_time: "0900"
+    end_time: "1200"
+    location: "哪裡都可以"
+    address: "哪裡都可以"
+    message: "よろしく！"
+    teach_language: "zh-TW"
+    study_language: "ja"
+    user_id: 3
+<% end %>

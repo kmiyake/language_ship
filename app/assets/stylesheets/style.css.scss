@@ -1,0 +1,207 @@
+body {
+  color: #666;
+  background-color: #F4F0E6;
+  font-family: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'ＭＳ Ｐゴシック', 'MS PGothic', Helvetica, Arial, sans-serif;
+}
+
+h2 {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 20px;
+  font-size: 21px;
+  line-height: 40px;
+  color: #333;
+  border: 0;
+  border-bottom: 1px solid #D5D5D5;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+}
+
+a > img {
+  text-decoration: none;
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.meeting {
+  background-color: #fafafa;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  border: solid 1px #dddddd;
+  box-shadow: 0 0 5px #cccccc;
+  margin-bottom: 30px;
+  padding: 20px;
+
+  .user {
+    margin: 0 0 15px 0;
+    img {
+      float: left;
+      height: 101px;
+      margin: 0 auto;
+      position: relative;
+    }
+    b { font-size: 16px; }
+    p {
+      display: block;
+      margin: 0 0 0 115px;
+    }
+    .user-message {
+      color: #888;
+      font-size: 13px;
+    }
+  }
+  // .user
+
+  .meeting-info {
+    background-color: #ffffff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: solid 1px #dddddd;
+    padding: 5px;
+  }
+  // .meeting-info
+
+}
+
+.help-block {
+  color: #999;
+}
+
+.field {
+  margin-bottom: 10px;
+  label {
+    text-decoration: underline;
+  }
+}
+
+.home {
+  .welcome {
+    text-align: center;
+    h1 {
+      font-size: 80px;
+      line-height: 1.4;
+    }
+    .description {
+      p {
+        color: #888888;
+        font-size: 20px;
+      }
+    }
+    // .description
+    .users {
+      a {
+        text-align: center;
+      }
+    }
+    // .users
+  }
+  // .welcome
+}
+// .home
+
+.meetings {
+  .header {
+    margin-bottom: 30px;
+  }
+}
+
+.appointments {
+  .meeting {
+    background-color: #ffffff;
+    border: solid 1px #cccccc;
+    box-shadow: 0px 1px 3px #999999;
+    margin: 0 0 30px 0;
+    padding: 10px 20px;
+    img {
+      border: solid 1px #aaaaaa;
+      float: left;
+      margin: 0 auto;
+      position: relative;
+    }
+    ul {
+      display: block;
+      list-style-type: none;
+      margin: 0 0 0 125px;
+    }
+  }
+  .field {
+    margin: 0 0 20px 0;
+  }
+}
+// .appointments
+
+.users {
+  h2 {
+    border-bottom: none;
+    margin: 20px 0 0 0;
+  }
+  .box {
+    background-color: #fafafa;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border: solid 1px #dddddd;
+    box-shadow: 0 0 5px #cccccc;
+    margin-bottom: 30px;
+    padding: 10px 20px 30px;
+
+    .user-name {
+      text-align: center;
+      h2 {
+      }
+    }
+
+    .user-image {
+      text-align: center;
+      margin-bottom: 20px;
+      img {
+      }
+    }
+
+    .user-info {
+      background-color: #ffffff;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+      border: solid 5px #ccc;
+      margin: 0 0 20px 0;
+      padding: 10px;
+    }
+
+    .user-counter {
+      text-align: center;
+    }
+  }
+}
+
+//.page-title {
+//  display: block;
+//  width: 100%;
+//  padding: 0;
+//  margin-bottom: 20px;
+//  font-size: 21px;
+//  line-height: 40px;
+//  color: #333;
+//  border: 0;
+//  border-bottom: 1px solid #E5E5E5;
+//}
+//
+//.heading {
+//  display: block;
+//  width: 100%;
+//  padding: 0;
+//  margin-bottom: 20px;
+//  font-size: 21px;
+//  line-height: 40px;
+//  color: #333;
+//  border: 0;
+//  border-bottom: 1px solid #E5E5E5;
+//}
+//

@@ -1,12 +1,28 @@
 LangMeeting::Application.routes.draw do
-  resources :meetings
-
   match 'auth/:provider/callback', to: 'sessions#create'
   match 'auth/failure', to: redirect('/')
   match 'signout', to: 'sessions#destroy', as: 'signout'
+
+  resources :meetings do
+    get 'created', on: :collection
+    get 'today', on: :collection
+    get 'search', on: :collection
+    resources :appointments do
+      member do
+        put 'accept'
+      end
+    end
+  end
+
+  resources :users, only: :update
+
+  get ':profile_url/edit', to: 'users#edit'
+  get ':profile_url/successes', to: 'users#successes'
+  get ':profile_url/meetings', to: 'users#meetings'
+  get ':profile_url', to: 'users#show'
+
   match 'home' => 'home#show'
   root to: 'home#show'
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

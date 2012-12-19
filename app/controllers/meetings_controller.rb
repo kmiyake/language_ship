@@ -1,12 +1,48 @@
 class MeetingsController < ApplicationController
+  before_filter :login_required, :only => [:new, :edit, :create, :update, :destroy]
+
   # GET /meetings
   # GET /meetings.json
   def index
-    @meetings = Meeting.all
+    @meetings = Meeting.order("date DESC")
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @meetings }
+    end
+  end
+
+  def created
+    @meetings = Meeting.order("created_at DESC")
+
+    respond_to do |format|
+      format.html { render action: 'index' }
+    end
+  end
+
+  def today
+    @meetings = Meeting.where(date: Date.today)
+
+    respond_to do |format|
+      format.html { render action: 'index' }
+    end
+  end
+
+  def search
+    if params[:name]
+      @users = User.where("name LIKE '%#{params[:name]}%'")
+      @meetings = @users.map {|u| u.meetings }.flatten
+    end
+
+    if params[:teach_language]
+      @meetings = Meeting.where(teach_language: params[:teach_language])
+    end
+
+    if params[:study_language]
+      @meetings = Meeting.where(study_language: params[:study_language])
+    end
+
+    respond_to do |format|
+      format.html { render action: 'index' }
     end
   end
 
@@ -17,38 +53,36 @@ class MeetingsController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @meeting }
     end
   end
 
   # GET /meetings/new
   # GET /meetings/new.json
   def new
-    @meeting = Meeting.new
+    @meeting = current_user.meetings.build
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @meeting }
     end
   end
 
   # GET /meetings/1/edit
   def edit
-    @meeting = Meeting.find(params[:id])
+    @meeting = current_user.meetings.find(params[:id])
   end
 
   # POST /meetings
   # POST /meetings.json
   def create
-    @meeting = Meeting.new(params[:meeting])
+    @meeting = current_user.meetings.build(params[:meeting])
+    @meeting.start_time = params[:date][:start_hour] + params[:date][:start_minute]
+    @meeting.end_time = params[:date][:end_hour] + params[:date][:end_minute]
 
     respond_to do |format|
       if @meeting.save
-        format.html { redirect_to @meeting, notice: 'Meeting was successfully created.' }
-        format.json { render json: @meeting, status: :created, location: @meeting }
+        format.html { redirect_to root_url, notice: t('.meetings.create.success') }
       else
         format.html { render action: "new" }
-        format.json { render json: @meeting.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -56,15 +90,15 @@ class MeetingsController < ApplicationController
   # PUT /meetings/1
   # PUT /meetings/1.json
   def update
-    @meeting = Meeting.find(params[:id])
+    @meeting = current_user.meetings.find(params[:id])
+    @meeting.start_time = params[:date][:start_hour] + params[:date][:start_minute]
+    @meeting.end_time = params[:date][:end_hour] + params[:date][:end_minute]
 
     respond_to do |format|
       if @meeting.update_attributes(params[:meeting])
-        format.html { redirect_to @meeting, notice: 'Meeting was successfully updated.' }
-        format.json { head :no_content }
+        format.html { redirect_to root_url, notice: t('.meetings.update.success') }
       else
         format.html { render action: "edit" }
-        format.json { render json: @meeting.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -72,12 +106,11 @@ class MeetingsController < ApplicationController
   # DELETE /meetings/1
   # DELETE /meetings/1.json
   def destroy
-    @meeting = Meeting.find(params[:id])
+    @meeting = current_user.meetings.find(params[:id])
     @meeting.destroy
 
     respond_to do |format|
-      format.html { redirect_to meetings_url }
-      format.json { head :no_content }
+      format.html { redirect_to root_url }
     end
   end
 end

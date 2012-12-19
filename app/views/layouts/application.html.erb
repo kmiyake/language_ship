@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "LangMeeting" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "LanguageShip" %></title>
     <%= csrf_meta_tags %>
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
@@ -16,27 +16,27 @@
 
     <!-- For third-generation iPad with high-resolution Retina display: -->
     <!-- Size should be 144 x 144 pixels -->
-    <%= favicon_link_tag 'images/apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144' %>
+    <%= favicon_link_tag 'apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144' %>
 
     <!-- For iPhone with high-resolution Retina display: -->
     <!-- Size should be 114 x 114 pixels -->
-    <%= favicon_link_tag 'images/apple-touch-icon-114x114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114' %>
+    <%= favicon_link_tag 'apple-touch-icon-114x114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114' %>
 
     <!-- For first- and second-generation iPad: -->
     <!-- Size should be 72 x 72 pixels -->
-    <%= favicon_link_tag 'images/apple-touch-icon-72x72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72' %>
+    <%= favicon_link_tag 'apple-touch-icon-72x72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72' %>
 
     <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
     <!-- Size should be 57 x 57 pixels -->
-    <%= favicon_link_tag 'images/apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png' %>
+    <%= favicon_link_tag 'apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png' %>
 
     <!-- For all other devices -->
     <!-- Size should be 32 x 32 pixels -->
-    <%= favicon_link_tag 'images/favicon.ico', :rel => 'shortcut icon' %>
+    <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
   </head>
-  <body>
+  <body class="<%= controller.controller_name %>">
 
-    <div class="navbar navbar-fixed-top">
+    <div class="navbar navbar-fixed-top navbar-inverse">
       <div class="navbar-inner">
         <div class="container">
           <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
@@ -44,14 +44,21 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">LangMeeting</a>
+          <%= link_to 'LanguageShip', root_path, class: "brand" %>
           <div class="container nav-collapse">
             <ul class="nav">
               <% if current_user %>
-                <li><p class="navbar-text">Signed in as <strong><%= current_user.name %></strong>!</p></li>
-                <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
+                <li><%= link_to t('.new_meeting'), new_meeting_path %></li>
+              <% end %>
+              <li><%= link_to t('.search_meetings'), meetings_path %></li>
+            </ul>
+            <ul class="nav pull-right">
+              <% if current_user %>
+                <li><%= link_to current_user.name, "/#{current_user.profile_url}" %></li>
+                <li><%= link_to t('.account_setting'), "/#{current_user.profile_url}/edit" %></li>
+                <li><%= link_to t('.sign_out'), signout_path, id: "sign_out" %></li>
               <% else %>
-                <li><%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %></li>
+                <li><i class="social foundicon-facebook"></i><%= link_to t('.sign_in_with_facebook'), "/auth/facebook", id: "sign_in" %></li>
               <% end %>
             </ul>
           </div><!--/.nav-collapse -->
@@ -62,25 +69,20 @@
     <div class="container">
       <div class="content">
         <div class="row">
-           <div class="span9">
-              <%= yield %>
-            </div>
-            <div class="span3">
-              <div class="well sidebar-nav">
-                <h3>Sidebar</h3>
-                <ul class="nav nav-list">
-                  <li class="nav-header">Sidebar</li>
-                  <li><%= link_to "Link1", "/path1"  %></li>
-                  <li><%= link_to "Link2", "/path2"  %></li>
-                  <li><%= link_to "Link3", "/path3"  %></li>
-                </ul>
-              </div><!--/.well -->
-            </div><!--/span-->
+          <div class="span12">
+            <% if flash[:notice] %>
+              <div class="alert alert-success">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <%= flash[:notice] %>
+              </div>
+            <% end %>
+            <%= yield %>
+          </div>
         </div><!--/row-->
       </div><!--/content-->
 
       <footer>
-        <p>&copy; Company 2012</p>
+        <p>&copy; LanguageShip 2012</p>
       </footer>
 
     </div> <!-- /container -->
@@ -89,6 +91,7 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <%= javascript_include_tag "application" %>
+    <%= yield(:javascript) %>
 
   </body>
 </html>

@@ -1,0 +1,124 @@
+zh-TW:
+  layouts:
+    application:
+      new_meeting: "招募言語交換朋友"
+      search_meetings: "尋找言語交換朋友"
+      account_setting: "帳號設定"
+      sign_in_with_facebook: "用Facebook登入"
+      sign_out: "登出"
+  home:
+    show:
+      sign_in_with_facebook: "用Facebook登入"
+      description: "從現在開始語言交換"
+  meetings:
+    index:
+      search_meetings: "尋找言語交換朋友"
+      search_from_name: "用名字搜尋人"
+      search_from_study_language: "用學習的語言搜尋人"
+      name: "姓名"
+      search: "検索"
+      order_by_date: "日期順序"
+      order_by_updated: "更新日順序"
+      today_meetings: "今天的語言交換"
+    show:
+      owner: "主人"
+      guest: "客人"
+      message: "留言"
+      native_language: "母語"
+      learn_language: "學習的語言"
+      date: "日期"
+      time: "時間"
+      teach_language: "教你的語言"
+      study_language: "我學習的語言"
+      location: "地址"
+      the_number_of_application: "申請人数"
+      edit: "編輯"
+      destory: "刪除"
+    meeting:
+      success: "成交"
+      wanted: "招募中"
+      close: "結束"
+      teach_language: "我教你%{language}！"
+      study_language: "我學習%{language}！"
+    form:
+      new_meeting: "招募言語交換朋友"
+      edit_meeting: "編輯語言交換的內容"
+    create:
+      success: "登記了語言交換的募集。"
+    update:
+      success: "更新了語言交換的內容。"
+  users:
+    show:
+      name: "名字"
+      message: "留言"
+      native_language: "母語"
+      learn_language: "学習的言語"
+      register_language_exchange_count: "登記的言語交換"
+      success_language_exchange_count: "成交的言語交換"
+    edit:
+      account_setting: "一般帳號設定"
+      submit: "儲存"
+    update:
+      success: "已儲存變更。"
+  errors:
+    format: "%{message}"
+  activerecord:
+    errors:
+      models:
+        meeting:
+          attributes:
+            address:
+              blank: "你必須輸入地址。"
+        user:
+          attributes:
+            name:
+              blank: "你必須輸入名字。"
+            profile_url:
+              blank: "你必須輸入自己的網址。"
+            email:
+              blank: "你必須輸入電郵地址。"
+    attributes:
+      meeting:
+        date: "日期"
+        start_time: "開始時間"
+        end_time: "結束時間"
+        location: "地址的名字"
+        address: "地址"
+        message: "留言"
+        teach_language: "教的語言"
+        study_language: "學習的語言"
+      user:
+        name: "名字"
+        profile_url: "短網址"
+        email: "電郵地址"
+        native_language: "母語"
+        learn_language: "学習的言語"
+        message: "留言"
+  cant_be_in_the_past: "日期請輸入今天以後的日期。"
+  cant_be_in_the_past_than_start_time: "結束時間請輸入開始時間以後的時間。"
+  only_letters_and_number_allowed: "短網址請用英數字跟下劃線(_)輸入。"
+  date:
+    order:
+    - :year
+    - :month
+    - :day
+    month_names:
+    - 
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+  language:
+    ja: '日文'
+    zh-TW: '中文（繁体字）'
+  are_you_sure: "真的好嗎？"
+  location_explain: "請輸入進行語言交換的店和建築物的名字。<br>詳細的地方未定的情況請輸入地域名等。"
+  address_explain: "自被輸入的地址Google Maps表示地圖。<br>詳細的地方未定的情況請輸入地域名等。"

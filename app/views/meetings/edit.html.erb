@@ -1,6 +1,5 @@
-<h1>Editing meeting</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @meeting %> |
-<%= link_to 'Back', meetings_path %>
+<div class="row">
+  <div class="span8 offset2">
+    <%= render partial: 'form', locals: { page_title: ".edit_meeting" } %>
+  </div>
+</div>

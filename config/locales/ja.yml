@@ -1,0 +1,122 @@
+ja:
+  layouts:
+    application:
+      new_meeting: "言語交換を募集する"
+      search_meetings: "言語交換を探す"
+      account_setting: "アカウント設定"
+      sign_in_with_facebook: "Facebookでログイン"
+      sign_out: "ログアウト"
+  home:
+    show:
+      sign_in_with_facebook: "Facebookでログイン"
+      description: "言語交換を始めよう"
+  meetings:
+    index:
+      search_meetings: "言語交換を探す"
+      search_from_name: "名前で探す"
+      search_from_study_language: "学習言語で探す"
+      name: "名前"
+      search: "検索"
+      order_by_date: "日付順"
+      order_by_updated: "更新順"
+      today_meetings: "本日の言語交換"
+    show:
+      owner: "オーナー"
+      guest: "ゲスト"
+      message: "メッセージ"
+      native_language: "母国語"
+      learn_language: "勉強中の言語"
+      date: "日付"
+      time: "時間"
+      teach_language: "教える言語"
+      study_language: "教えてほしい言語"
+      location: "場所"
+      the_number_of_application: "申請人数"
+      edit: "編集"
+      destory: "削除"
+    meeting:
+      success: "成立"
+      wanted: "募集中"
+      close: "終了"
+      teach_language: "%{language}教えます！"
+      study_language: "%{language}教えてください！"
+    form:
+      new_meeting: "言語交換を募集する"
+      edit_meeting: "言語交換を編集する"
+    create:
+      success: "言語交換の募集を登録しました。"
+    update:
+      success: "言語交換の内容を更新しました。"
+  users:
+    show:
+      name: "名前"
+      message: "メッセージ"
+      native_language: "母国語"
+      learn_language: "学習言語"
+      register_language_exchange_count: "登録した言語交換"
+      success_language_exchange_count: "成立した言語交換"
+    edit:
+      account_setting: "アカウント設定"
+      submit: "登録"
+    update:
+      success: "アカウント設定を更新しました。"
+  activerecord:
+    errors:
+      models:
+        meeting:
+          attributes:
+            address:
+              blank: "を入力してください。"
+        user:
+          attributes:
+            name:
+              blank: "を入力してください。"
+            profile_url:
+              blank: "を入力してください。"
+            email:
+              blank: "を入力してください。"
+    attributes:
+      meeting:
+        date: "日付"
+        start_time: "開始時間"
+        end_time: "終了時間"
+        location: "場所の名前"
+        address: "場所の住所"
+        message: "メッセージ"
+        teach_language: "教える言語"
+        study_language: "教えてほしい言語"
+      user:
+        name: "名前"
+        profile_url: "プロフィールURL"
+        email: "メールアドレス"
+        native_language: "母国語"
+        learn_language: "学習言語"
+        message: "メッセージ"
+  cant_be_in_the_past: "は今日以降の日付を入力してください。"
+  cant_be_in_the_past_than_start_time: "は開始時間以降の時間を入力してください。"
+  only_letters_and_number_allowed: "は英数字とアンダーバー（_）で入力してください。"
+  date:
+    order:
+    - :year
+    - :month
+    - :day
+    month_names:
+    - 
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+  language:
+    ja: '日本語'
+    zh-TW: '中国語（繁体字）'
+  are_you_sure: "本当によろしいですか？"
+  location_explain: "言語交換を行うお店や建物の名前を入力してください。<br>詳細な場所が未定な場合は地域名などを入力してください。"
+  address_explain: "入力された住所よりGoogle Mapsで地図を表示します。<br>詳細な場所が未定な場合は地域名などを入力してください。"

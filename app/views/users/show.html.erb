@@ -1,0 +1,48 @@
+<div class="row">
+  <div class="span12 clearfix">
+    <div class="box">
+      <div class="row">
+        <div class="span3 user-name">
+          <h2><%= @user.name %></h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span3">
+          <div class="user-image">
+            <%= image_tag "https://graph.facebook.com/#{@user.uid}/picture?type=large", class: "img-circle" %>
+          </div>
+        </div>
+        <div class="span5">
+          <div class="user-info">
+            <p>
+              <b><%= t '.message' %></b><br>
+              <%= @user.message %>
+            </p>
+            <p>
+              <b><%= t '.native_language' %></b><br>
+              <%= t @user.native_language, scope: :language %>
+            </p>
+            <p>
+              <b><%= t '.learn_language' %></b><br>
+              <%= t @user.learn_language, scope: :language %>
+            </p>
+          </div>
+        </div>
+        <div class="span3">
+          <ul class="user-counter">
+            <li><%= t '.register_language_exchange_count' %> <%= link_to @user.meetings.count, "/#{@user.profile_url}/meetings" %></li>
+            <li><%= t '.success_language_exchange_count' %> <%= link_to @user.meetings.where(success: true).count, "/#{@user.profile_url}/successes" %></li> 
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% if @meetings %>
+  <div class="row">
+    <div class="span12">
+      <h3><%= @user.name %>の言語交換リスト</h3>
+    </div>
+    <%= render partial: 'meetings/meeting', collection: @meetings %>
+  </div>
+<% end %>

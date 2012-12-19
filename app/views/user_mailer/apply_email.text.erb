@@ -1,0 +1,7 @@
+<%= @guest.name %>さんから言語交換の申請がありました。
+=====================================================
+ 
+<%= @guest.name %>さんが<%= @meeting.date %>の言語交換に申請しました。
+<% if @appointment.message %>
+  <%= @appointment.message %>
+<% end %>

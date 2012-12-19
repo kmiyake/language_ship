@@ -1,2 +1,16 @@
-<h1>Home#show</h1>
-<p>Find me in app/views/home/show.html.erb</p>
+<div class="welcome">
+  <h1>LanguageShip</h1>
+  <div class="description">
+    <p><%= t '.description' %></p>
+  </div>
+  <% unless current_user %>
+    <p><%= link_to t('.sign_in_with_facebook'), "/auth/facebook", id: "sign_in", class: "btn btn-large btn-primary" %></p>
+  <% end %>
+  <p class="users">
+    <% @users.each do |user| %>
+      <%= link_to "/#{user.profile_url}" do %>
+        <%= image_tag "https://graph.facebook.com/#{user.uid}/picture?type=small", class: "img-circle" %>
+      <% end %>
+    <% end %>
+  </p>
+</div>

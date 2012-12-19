@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <p><%= link_to @owner.name, "/#{@owner.profile_url}" %>さんから<%= link_to @meeting.date, @meeting %>の言語交換に承認がありました。</p>
+  </body>
+</html>
