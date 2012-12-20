@@ -1,5 +1,6 @@
 <% 1.upto(10) do |i| %>
   meeting_<%= i %>:
+    id: <%= i %>
     date: <%= i.day.since(Date.today) %>
     start_time: "0900"
     end_time: "1200"
@@ -13,6 +14,7 @@
 
 <% 11.upto(20) do |i| %>
   meeting_<%= i %>:
+    id: <%= i %>
     date: <%= i.day.since(Date.today) %>
     start_time: "0900"
     end_time: "1200"
