@@ -5,7 +5,7 @@ class Meeting < ActiveRecord::Base
 
   has_many :appointments
 
-  validate :date_cannot_be_in_past,
+  validate :before_today,
     :start_time_cannot_be_in_past_than_end_time
   validates :address, :presence => true
 
@@ -44,12 +44,8 @@ class Meeting < ActiveRecord::Base
 
   private
 
-  def date_cannot_be_in_past
-    if is_past?
-      errors.add(:date, I18n.t(".cant_be_in_the_past"))
-    else
-      true
-    end
+  def before_today
+    errors.add(:date, I18n.t(".cant_be_in_the_past")) if date < Date.today
   end
 
   def start_time_cannot_be_in_past_than_end_time
