@@ -13,16 +13,16 @@
         </div>
       <% end %>
 
-      <legend>言語交換相手を申し込む</legend>
+      <h2><%= t '.new_appointment' %></h2>
       <div class="clearfix">
         <div class="meeting span5">
           <%= image_tag "https://graph.facebook.com/#{@meeting.user.uid}/picture?type=normal" %>
           <ul>
-            <li>主催者：<%= link_to @meeting.user.name, "/#{@meeting.user.profile_url}" %></li>
-            <li>日付：<%= @meeting.date %></li>
-            <li>時間： <%= @meeting.time %></li>
-            <li>場所： <%= @meeting.location %></li>
-            <li>住所： <%= @meeting.address %></li>
+            <li><%= t '.owner' %>：<%= link_to @meeting.user.name, "/#{@meeting.user.profile_url}" %></li>
+            <li><%= t '.date' %>：<%= @meeting.date %></li>
+            <li><%= t '.time' %>： <%= @meeting.time %></li>
+            <li><%= t '.location' %>： <%= @meeting.location %></li>
+            <li><%= t '.address' %>： <%= @meeting.address %></li>
           </ul>
         </div>
       </div>

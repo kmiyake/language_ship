@@ -48,6 +48,14 @@ zh-TW:
       success: "登記了語言交換的募集。"
     update:
       success: "更新了語言交換的內容。"
+  appointments:
+    new:
+      new_appointment: "申請語言交換"
+      owner: "主人"
+      date: "日期"
+      time: "時間"
+      location: "地址的名字"
+      address: "地址"
   users:
     show:
       name: "名字"
@@ -88,6 +96,8 @@ zh-TW:
         message: "留言"
         teach_language: "教的語言"
         study_language: "學習的語言"
+      appointment:
+        message: "留言"
       user:
         name: "名字"
         profile_url: "短網址"

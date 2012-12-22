@@ -48,6 +48,14 @@ ja:
       success: "言語交換の募集を登録しました。"
     update:
       success: "言語交換の内容を更新しました。"
+  appointments:
+    new:
+      new_appointment: "言語交換を申請する"
+      owner: "オーナー"
+      date: "日付"
+      time: "時間"
+      location: "場所"
+      address: "住所"
   users:
     show:
       name: "名前"
@@ -86,6 +94,8 @@ ja:
         message: "メッセージ"
         teach_language: "教える言語"
         study_language: "教えてほしい言語"
+      appointment:
+        message: "メッセージ"
       user:
         name: "名前"
         profile_url: "プロフィールURL"
