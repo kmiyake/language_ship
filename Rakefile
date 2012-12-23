@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-LangMeeting::Application.load_tasks
+LanguageShip::Application.load_tasks
