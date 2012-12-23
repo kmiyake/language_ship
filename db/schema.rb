@@ -48,8 +48,8 @@ ActiveRecord::Schema.define(:version => 20121122105226) do
     t.datetime "oauth_expires_at"
     t.datetime "created_at",                          :null => false
     t.datetime "updated_at",                          :null => false
-    t.string   "native_language",  :default => "jp",  :null => false
-    t.string   "learn_language",   :default => "jp",  :null => false
+    t.string   "native_language",  :default => "ja",  :null => false
+    t.string   "learn_language",   :default => "ja",  :null => false
     t.text     "message"
     t.string   "email"
     t.boolean  "getting_started",  :default => false, :null => false
