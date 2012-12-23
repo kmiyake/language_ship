@@ -5,8 +5,8 @@ class CreateAppointments < ActiveRecord::Migration
       t.integer :sender_id
       t.integer :recipient_id
       t.text :message
-      t.boolean :accept, :default => :false
-      t.boolean :reject, :default => :false
+      t.boolean :accept, :default => false
+      t.boolean :reject, :default => false
 
       t.timestamps
     end
