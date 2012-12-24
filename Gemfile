@@ -32,15 +32,16 @@ gem 'jquery-rails'
 # Use unicorn as the app server
 # gem 'unicorn'
 
-# Deploy with Capistrano
-# gem 'capistrano'
-
 # To use debugger
 # gem 'debugger'
 gem 'twitter-bootstrap-rails', :group => :assets
 gem 'omniauth-facebook'
 
 group :development, :test do
+  # Deploy with Capistrano
+  gem 'capistrano'
+  gem 'rvm-capistrano'
+
   # rspec goodies
   gem 'rspec-rails'
 end
