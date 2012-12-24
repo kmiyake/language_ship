@@ -41,7 +41,7 @@
 <% if @meetings %>
   <div class="row">
     <div class="span12">
-      <h3><%= @user.name %>の言語交換リスト</h3>
+      <h3><%= t '.user_language_exchange_list', :user => @user.name %></h3>
     </div>
     <%= render partial: 'meetings/meeting', collection: @meetings %>
   </div>

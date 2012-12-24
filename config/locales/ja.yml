@@ -65,6 +65,7 @@ ja:
       learn_language: "学習言語"
       register_language_exchange_count: "登録した言語交換"
       success_language_exchange_count: "成立した言語交換"
+      user_language_exchange_list: "%{user}の言語交換リスト"
     edit:
       account_setting: "アカウント設定"
       submit: "登録"
