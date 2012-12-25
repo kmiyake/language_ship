@@ -2,19 +2,9 @@
 require 'spec_helper'
 
 describe MeetingsController do
-  fixtures :meetings
-
   before do
-    @user = User.create!({
-      :name => "kotamiyake",
-      :profile_url => "kotamiyake",
-      :email => "test@languageship.com",
-      :native_language => "ja",
-      :learn_language => "zh-TW",
-      :message => "よろしく！"
-    })
-
-    @meeting = meetings(:meeting_1)
+    @user = FactoryGirl.create(:user)
+    @meeting = FactoryGirl.create(:meeting, :user => @user)
   end
 
   context '#index' do
@@ -56,23 +46,23 @@ describe MeetingsController do
 
   context '#show' do
     it "should be success" do
-      get :show, id: 1
+      get :show, id: @meeting.id
       response.should be_success
     end
   end
 
   context '#new' do
     it "should be success" do
-      session[:user_id] = 1
-      get :new, id: 1
+      session[:user_id] = @user.id
+      get :new, id: @meeting.id
       response.should be_success
     end
   end
 
   context '#edit' do
     it "should be success" do
-      session[:user_id] = 1
-      get :edit, id: 1
+      session[:user_id] = @user.id
+      get :edit, id: @meeting.id
       response.should be_success
     end
   end
