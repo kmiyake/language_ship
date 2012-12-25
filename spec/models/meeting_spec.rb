@@ -24,4 +24,15 @@ describe Meeting do
   it "is invalid without address" do
     FactoryGirl.build(:meeting, address: "").should_not be_valid
   end
+
+  it "returns a sorted array of results that match" do
+    smith = FactoryGirl.create(:user, name: "smith")
+    bob = FactoryGirl.create(:user, name: "bob")
+    taro = FactoryGirl.create(:user, name: "taro")
+
+    smith_meeting = FactoryGirl.create(:meeting, user: smith)
+    bob_meeting = FactoryGirl.create(:meeting, user: bob)
+    taro_meeting = FactoryGirl.create(:meeting, user: taro)
+    Meeting.by_name("taro").should == [taro_meeting]
+  end
 end

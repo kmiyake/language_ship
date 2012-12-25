@@ -27,8 +27,7 @@ class MeetingsController < ApplicationController
 
   def search
     if params[:name]
-      @users = User.where("name LIKE '%#{params[:name]}%'")
-      @meetings = @users.map {|u| u.meetings }.flatten
+      @meetings = Meeting.by_name(params[:name])
     elsif params[:teach_language]
       @meetings = Meeting.where(teach_language: params[:teach_language])
     end

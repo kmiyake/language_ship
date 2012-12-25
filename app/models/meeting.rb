@@ -15,6 +15,11 @@ class Meeting < ActiveRecord::Base
     where("date >= :today", { today: Date.today })
   end
 
+  def self.by_name(name)
+    users = User.where("name LIKE '%#{name}%'")
+    users.map {|u| u.meetings }.flatten
+  end
+
   def guest_user
     appointments.where(accept: true).first.sender
   end
