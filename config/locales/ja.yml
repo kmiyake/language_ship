@@ -57,6 +57,7 @@ ja:
       time: "時間"
       location: "場所"
       address: "住所"
+      apply: "申し込む"
   users:
     show:
       name: "名前"

@@ -57,6 +57,7 @@ zh-TW:
       time: "時間"
       location: "地址的名字"
       address: "地址"
+      apply: "申請"
   users:
     show:
       name: "名字"
