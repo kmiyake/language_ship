@@ -16,7 +16,7 @@ FactoryGirl.define do
     message "一緒に言語交換しませんか？"
     sequence(:email) { |n| "taro#{n}#{r_str}@languageship.com" }
     getting_started false
-    sequence(:profile_url) { |n| "taro#{n}#{r_str}" }
+    sequence(:profile_url) { |n| "taro#{n}" }
   end
 
   factory :meeting do
