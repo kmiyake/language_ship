@@ -78,6 +78,8 @@ zh-TW:
       models:
         meeting:
           attributes:
+            location:
+              blank: "你必須輸入地址的名字。"
             address:
               blank: "你必須輸入地址。"
         user:

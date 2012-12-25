@@ -76,6 +76,8 @@ ja:
       models:
         meeting:
           attributes:
+            location:
+              blank: "を入力してください。"
             address:
               blank: "を入力してください。"
         user:
