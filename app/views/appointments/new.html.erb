@@ -20,7 +20,7 @@
           <ul>
             <li><%= t '.owner' %>：<%= link_to @meeting.user.name, "/#{@meeting.user.profile_url}" %></li>
             <li><%= t '.date' %>：<%= @meeting.date %></li>
-            <li><%= t '.time' %>： <%= @meeting.time %></li>
+            <li><%= t '.time' %>： <%= @meeting.render_time %></li>
             <li><%= t '.location' %>： <%= @meeting.location %></li>
             <li><%= t '.address' %>： <%= @meeting.address %></li>
           </ul>
