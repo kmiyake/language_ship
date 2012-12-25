@@ -7,6 +7,8 @@ class Meeting < ActiveRecord::Base
 
   validate :before_today,
     :start_time_cannot_be_in_past_than_end_time
+
+  validates :location, :presence => true
   validates :address, :presence => true
 
   def self.before_today
