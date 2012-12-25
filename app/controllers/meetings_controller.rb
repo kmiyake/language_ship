@@ -60,8 +60,6 @@ class MeetingsController < ApplicationController
 
   def create
     @meeting = current_user.meetings.build(params[:meeting])
-    @meeting.start_time = params[:date][:start_hour] + params[:date][:start_minute]
-    @meeting.end_time = params[:date][:end_hour] + params[:date][:end_minute]
 
     respond_to do |format|
       if @meeting.save
@@ -74,8 +72,6 @@ class MeetingsController < ApplicationController
 
   def update
     @meeting = current_user.meetings.find(params[:id])
-    @meeting.start_time = params[:date][:start_hour] + params[:date][:start_minute]
-    @meeting.end_time = params[:date][:end_hour] + params[:date][:end_minute]
 
     respond_to do |format|
       if @meeting.update_attributes(params[:meeting])

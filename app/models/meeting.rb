@@ -1,5 +1,5 @@
 class Meeting < ActiveRecord::Base
-  attr_accessible :address, :close, :date, :end_time, :location, :message, :start_time, :study_language, :success, :teach_language, :user_id
+  attr_accessible :address, :close, :date, :end_hour, :end_minute, :location, :message, :start_hour, :start_minute, :study_language, :success, :teach_language, :user_id
 
   belongs_to :user
 
@@ -17,25 +17,8 @@ class Meeting < ActiveRecord::Base
     appointments.where(accept: true).first.sender
   end
 
-  def time
-    st,et = start_time.dup, end_time.dup
-    "#{st.insert(2, ":")} - #{et.insert(2, ":")}"
-  end
-
-  def start_hour
-    start_time[0..1].to_i || 0 if start_time
-  end
-
-  def start_minute
-    start_time[2..3].to_i || 0 if start_time
-  end
-
-  def end_hour
-    end_time[0..1].to_i || 0 if end_time
-  end
-
-  def end_minute
-    end_time[2..3].to_i || 0 if end_time
+  def render_time
+    "#{start_hour}:#{start_minute} - #{end_hour}:#{end_minute}"
   end
 
   def is_past?
@@ -49,6 +32,8 @@ class Meeting < ActiveRecord::Base
   end
 
   def start_time_cannot_be_in_past_than_end_time
+    start_time = start_hour + start_minute
+    end_time = end_hour + end_minute
     if start_time.to_i >= end_time.to_i
       errors.add(:end_time, I18n.t(".cant_be_in_the_past_than_start_time"))
     else

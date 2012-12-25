@@ -68,7 +68,7 @@
     <b><%= t '.date' %></b>
     <p><%= @meeting.date %></p>
     <b><%= t '.time' %></b>
-    <p><%= @meeting.time %></p>
+    <p><%= @meeting.render_time %></p>
     <b><%= t '.teach_language' %></b>
     <p><%= t @meeting.teach_language, :scope => 'language' %></p>
     <b><%= t '.study_language' %></b>
