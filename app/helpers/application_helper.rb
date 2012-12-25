@@ -8,6 +8,10 @@ module ApplicationHelper
   end
 
   def translation_language_options
-    available_language_options.map {|o| o[0] = I18n.t(o[1], scope: :language) }
+    options = []
+    AVAILABLE_LANGUAGES.each do |locale, language|
+      options << [I18n.t("language.#{locale}"), locale]
+    end
+    options.sort_by {|o| o[0] }
   end
 end
