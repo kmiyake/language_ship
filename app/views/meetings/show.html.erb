@@ -120,7 +120,7 @@
       </p>
 
       <p>
-        <% if current_user.id == @meeting.user.id %>
+        <% if current_user.id == @meeting.user.id && @meeting.date > Date.today %>
           <%= link_to t('.edit'), edit_meeting_path(@meeting), class: "btn" %>
           <%= link_to t('.destory'), @meeting, method: :delete, confirm: t('are_you_sure'), class: "btn btn-danger" %>
         <% end %>
