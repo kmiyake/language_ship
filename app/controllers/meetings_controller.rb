@@ -29,7 +29,7 @@ class MeetingsController < ApplicationController
     if params[:name]
       @meetings = Meeting.by_name(params[:name])
     elsif params[:teach_language]
-      @meetings = Meeting.where(teach_language: params[:teach_language])
+      @meetings = Meeting.where(teach_language: params[:teach_language]).order("date DESC")
     end
 
     respond_to do |format|

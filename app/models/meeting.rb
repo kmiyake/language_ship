@@ -17,7 +17,7 @@ class Meeting < ActiveRecord::Base
 
   def self.by_name(name)
     users = User.where("name LIKE '%#{name}%'")
-    users.map {|u| u.meetings }.flatten
+    where("user_id in (:ids)", ids: users).order("date DESC")
   end
 
   def guest_user

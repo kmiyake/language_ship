@@ -32,7 +32,8 @@ describe Meeting do
 
     smith_meeting = FactoryGirl.create(:meeting, user: smith)
     bob_meeting = FactoryGirl.create(:meeting, user: bob)
-    taro_meeting = FactoryGirl.create(:meeting, user: taro)
-    Meeting.by_name("taro").should == [taro_meeting]
+    taro_meeting_1 = FactoryGirl.create(:meeting, date: Date.today, user: taro)
+    taro_meeting_2 = FactoryGirl.create(:meeting, date: 1.day.since(Date.today), user: taro)
+    Meeting.by_name("taro").should == [taro_meeting_2, taro_meeting_1]
   end
 end
