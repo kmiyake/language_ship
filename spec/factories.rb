@@ -34,4 +34,8 @@ FactoryGirl.define do
     end_minute "00"
     user
   end
+
+  factory :invalid_meeting, parent: :meeting do
+    location nil
+  end
 end

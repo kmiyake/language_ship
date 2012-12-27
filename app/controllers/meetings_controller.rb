@@ -62,7 +62,7 @@ class MeetingsController < ApplicationController
 
     respond_to do |format|
       if @meeting.save
-        format.html { redirect_to root_url, notice: t('.meetings.create.success') }
+        format.html { redirect_to @meeting, notice: t('.meetings.create.success') }
       else
         format.html { render action: "new" }
       end
@@ -74,7 +74,7 @@ class MeetingsController < ApplicationController
 
     respond_to do |format|
       if @meeting.update_attributes(params[:meeting])
-        format.html { redirect_to root_url, notice: t('.meetings.update.success') }
+        format.html { redirect_to @meeting, notice: t('.meetings.update.success') }
       else
         format.html { render action: "edit" }
       end
@@ -86,7 +86,7 @@ class MeetingsController < ApplicationController
     @meeting.destroy
 
     respond_to do |format|
-      format.html { redirect_to root_url }
+      format.html { redirect_to meetings_url }
     end
   end
 end
