@@ -35,6 +35,7 @@ zh-TW:
       edit: "編輯"
       destory: "刪除"
       study_with: "我想跟她一起學習！"
+      cancel: "取消"
       accept: "跟他一起學習！"
     meeting:
       success: "成交"
