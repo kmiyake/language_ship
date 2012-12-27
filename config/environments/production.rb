@@ -50,6 +50,15 @@ LanguageShip::Application.configure do
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.smtp_settings = {
+    :address              => "languageship.com",
+    :port                 => 25,
+    :domain               => 'languageship.com',
+    :user_name            => AppConfig["defaults"]["mail"]["user"],
+    :password             => AppConfig["defaults"]["mail"]["password"],
+    :authentication       => 'plain',
+    :enable_starttls_auto => true  }
+
 
   # Enable threaded mode
   # config.threadsafe!
