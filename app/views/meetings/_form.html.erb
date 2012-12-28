@@ -47,11 +47,11 @@
   </div>
   <div class="field">
     <%= f.label :teach_language %>
-    <%= f.select :teach_language, translation_language_options %>
+    <%= f.select :teach_language, translation_language_options, selected: current_user.native_language %>
   </div>
   <div class="field">
     <%= f.label :study_language %>
-    <%= f.select :study_language, translation_language_options %>
+    <%= f.select :study_language, translation_language_options, selected: current_user.learn_language %>
   </div>
   <div class="actions">
     <%= f.submit "登録", class: "btn btn-primary" %>
