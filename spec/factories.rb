@@ -5,7 +5,7 @@ def r_str
 end
 
 FactoryGirl.define do
-  factory :user do
+  factory :user, :aliases => [:sender, :recipient] do
     provider "facebook"
     sequence(:uid) { |n| n }
     sequence(:name) { |n| "Taro#{n}#{r_str}" }
@@ -37,5 +37,14 @@ FactoryGirl.define do
 
   factory :invalid_meeting, parent: :meeting do
     location nil
+  end
+
+  factory :appointment do
+    meeting
+    sender
+    recipient
+    message "よろしくお願いします！"
+    accept false
+    reject false
   end
 end

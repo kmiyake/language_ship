@@ -1,4 +1,6 @@
 class AppointmentsController < ApplicationController
+  before_filter :login_required, :must_guest
+
   def new
     @meeting = Meeting.find(params[:meeting_id])
     @appointment = @meeting.appointments.build(
@@ -14,7 +16,7 @@ class AppointmentsController < ApplicationController
     respond_to do |format|
       if @appointment.save
         UserMailer.apply_email(@meeting, @appointment).deliver
-        format.html { redirect_to root_url }
+        format.html { redirect_to @meeting }
       else
         format.html { render action: "new" }
       end
@@ -36,11 +38,18 @@ class AppointmentsController < ApplicationController
     @appointment = @meeting.appointments.find(params[:id])
     respond_to do |format|
       if @appointment.update_attribute(:accept, true) &&
-        UserMailer.accept_email(@meeting, @appointment).deliver
         @meeting.appointments.where("id != #{@appointment.id}").update_all(reject: true) &&
         @meeting.update_attribute(:success, true)
+        UserMailer.accept_email(@meeting, @appointment).deliver
         format.html { redirect_to root_url }
       end
     end
+  end
+
+  private
+
+  def must_guest
+    @meeting = Meeting.find(params[:meeting_id])
+    redirect_to root_url if @meeting.user_id == current_user.id
   end
 end
