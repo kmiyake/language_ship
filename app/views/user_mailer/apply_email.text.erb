@@ -1,7 +1,15 @@
-<%= @guest.name %>さんから言語交換の申請がありました。
-=====================================================
- 
-<%= @guest.name %>さんが<%= @meeting.date %>の言語交換に申請しました。
-<% if @appointment.message %>
-  <%= @appointment.message %>
+<%= t ".apply_message_for_text", :guest_name => @guest.name, :meeting_date => @meeting.date %>
+
+<%= t ".meeting_page" %>
+<%= url_for(:host => "languageship.com", :controller => "meetings", :action => "show", :id => @meeting.id) %>
+
+<%= t ".profile_page" %>
+<%= url_for(:host => "languageship.com", :controller => "users", :action => "show", :profile_url => @guest.profile_url) %>
+
+<% unless @appointment.message.empty? %>
+<%= t ".message" %>
+------------------------------
+<%= @appointment.message %>
 <% end %>
+
+Copyright © languageship.com(<%= @url %>)

@@ -1,11 +1,15 @@
 #-*- coding: utf-8 -*-
 class UserMailer < ActionMailer::Base
-  default from: "miyake.kota@gmail.com"
+  default from: "LanguageShip<email@languageship.com>"
 
   def welcome_email(user)
     @user = user
-    @url = "localhost"
-    mail(to: user.email, subject: "Welcome to My Awsome Site")
+    @url = "http://languageship.com"
+    subject = I18n.t("user_mailer.welcome_email.welcome_message")
+    mail(to: user.email, subject: subject) do |format|
+      format.html
+      format.text
+    end
   end
 
   def apply_email(meeting, appointment)
@@ -13,7 +17,13 @@ class UserMailer < ActionMailer::Base
     @guest = appointment.sender
     @meeting = meeting
     @appointment = appointment
-    mail(to: @owner.email, subject: "#{@guest.name}さんから言語交換の申請がありました。")
+    @url = "http://languageship.com"
+    I18n.locale = @owner.native_language
+    subject = I18n.t("user_mailer.apply_email.apply_message_for_text", :guest_name => @guest.name, :meeting_date => @meeting.date)
+    mail(to: @owner.email, subject: subject) do |format|
+      format.html
+      format.text
+    end
   end
 
   def accept_email(meeting, appointment)
@@ -21,6 +31,12 @@ class UserMailer < ActionMailer::Base
     @guest = appointment.sender
     @meeting = meeting
     @appointment = appointment
-    mail(to: @guest.email, subject: "#{@owner.name}さんから言語交換の承認がありました。")
+    @url = "http://languageship.com"
+    I18n.locale = @guest.native_language
+    subject = I18n.t("user_mailer.accept_email.accept_message_for_text", :owner_name => @owner.name, :meeting_date => @meeting.date)
+    mail(to: @guest.email, subject: subject) do |format|
+      format.html
+      format.text
+    end
   end
 end

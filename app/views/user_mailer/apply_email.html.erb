@@ -2,14 +2,32 @@
 <html>
   <head>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <style type="text/css">
+      <!--
+      body {
+        font-family: font-family: Verdana, Arial, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+      }
+      h1 {
+        font-size: 24px;
+        border-bottom: solid 1px #333;
+      }
+      -->
+    </style>
   </head>
   <body>
-    <p><%= link_to @guest.name, "/#{@guest.profile_url}" %>さんから<%= link_to @meeting.date, @meeting %>の言語交換に申請がありました。</p>
-    <% if @appointment.message %>
+    <p>
+      <%= t(".apply_message",
+            :user_url => url_for(:host => "languageship.com", :controller => "users", :action => "show", :profile_url => @guest.profile_url),
+            :guest_name => @guest.name,
+            :meeting_url => url_for(:host => "languageship.com", :controller => "meetings", :action => "show", :id => @meeting.id),
+            :meeting_date => @meeting.date).html_safe %>
+    </p>
+    <% unless @appointment.message.empty? %>
       <p>
-        <b>メッセージ</b><br>
+        <b><%= t ".message" %></b><br>
         <%= @appointment.message %>
       </p>
     <% end %>
+    <p>Copyright © <%= link_to "languageship.com", "http://languageship.com/" %><p>
   </body>
 </html>

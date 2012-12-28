@@ -73,6 +73,25 @@ ja:
       submit: "登録"
     update:
       success: "アカウント設定を更新しました。"
+  user_mailer:
+    welcome_email:
+      welcome_message: "LanguageShipへようこそ！"
+      body_message: "LanguageShipでは気軽に言語交換の相手を募集したり探すことができます。"
+      new_meeting_message: "まずは言語交換を募集してみましょう！"
+      new_meeting: "言語交換を募集する"
+      search_meetings_message: "または言語交換を探してみましょう！"
+      search_meetings: "言語交換を探す"
+    apply_email:
+      apply_message: "<a href='%{user_url}'>%{guest_name}</a>さんから<a href='%{meeting_url}'>%{meeting_date}</a>の言語交換に申請がありました。"
+      apply_message_for_text: "%{guest_name}さんから%{meeting_date}の言語交換に申請がありました。"
+      meeting_page: "言語交換ページ"
+      profile_page: "ユーザページ"
+      message: "メッセージ"
+    accept_email:
+      accept_message: "<a href='%{user_url}'>%{owner_name}</a>さんが<a href='%{meeting_url}'>%{meeting_date}</a>の言語交換を承認しました。"
+      accept_message_for_text: "%{owner_name}さんが%{meeting_date}の言語交換を承認しました。"
+      meeting_page: "言語交換ページ"
+      profile_page: "ユーザページ"
   activerecord:
     errors:
       models:

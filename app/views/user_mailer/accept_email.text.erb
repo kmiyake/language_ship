@@ -1,0 +1,10 @@
+<%= t ".accept_message_for_text", :owner_name => @owner.name, :meeting_date => @meeting.date %>
+
+<%= t ".meeting_page" %>
+<%= url_for(:host => "languageship.com", :controller => "meetings", :action => "show", :id => @meeting.id) %>
+
+<%= t ".profile_page" %>
+<%= url_for(:host => "languageship.com", :controller => "users", :action => "show", :profile_url => @owner.profile_url) %>
+
+
+Copyright © languageship.com(<%= @url %>)

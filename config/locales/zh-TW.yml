@@ -73,6 +73,25 @@ zh-TW:
       submit: "儲存"
     update:
       success: "已儲存變更。"
+  user_mailer:
+    welcome_email:
+      welcome_message: "歡迎LanguageShip！"
+      body_message: "LanguageShip輕鬆愉快地募集或者找得到語言交換朋友。"
+      new_meeting_message: "首先試著募集語言交換吧！"
+      new_meeting: "招募言語交換朋友"
+      search_meetings_message: "或試著尋找語言交換吧！"
+      search_meetings: "尋找言語交換朋友"
+    apply_email:
+      apply_message: "<a href='%{user_url}'>%{guest_name}</a>申請了<a href='%{meeting_url}'>%{meeting_date}</a>的言語交換。"
+      apply_message_for_text: "%{guest_name}申請了%{meeting_date}的言語交換。"
+      meeting_page: "言語交換網頁"
+      profile_page: "用戶的網頁"
+      message: "留言"
+    accept_email:
+      accept_message: "<a href='%{user_url}'>%{owner_name}</a>同意了<a href='%{meeting_url}'>%{meeting_date}</a>的言語交換。"
+      accept_message_for_text: "%{owner_name}同意了%{meeting_date}的言語交換。"
+      meeting_page: "言語交換網頁"
+      profile_page: "用戶的網頁"
   errors:
     format: "%{message}"
   activerecord:
