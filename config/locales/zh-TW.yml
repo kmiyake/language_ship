@@ -46,6 +46,7 @@ zh-TW:
     form:
       new_meeting: "招募言語交換朋友"
       edit_meeting: "編輯語言交換的內容"
+      submit: "登録"
     create:
       success: "登記了語言交換的募集。"
     update:

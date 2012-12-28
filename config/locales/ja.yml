@@ -46,6 +46,7 @@ ja:
     form:
       new_meeting: "言語交換を募集する"
       edit_meeting: "言語交換を編集する"
+      submit: "登録"
     create:
       success: "言語交換の募集を登録しました。"
     update:
