@@ -22,4 +22,5 @@ role :db,  "languageship.com", :primary => true
 
 after ("deploy:create_symlink") do
   run "ln -s /home/#{user}/config/#{application}/database.yml #{release_path}/config/database.yml"
+  run "ln -s /home/#{user}/config/#{application}/config.yml #{release_path}/config/config.yml"
 end 
