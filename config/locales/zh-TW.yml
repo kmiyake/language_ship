@@ -29,9 +29,6 @@ zh-TW:
     show:
       owner: "主人"
       guest: "客人"
-      message: "留言"
-      native_language: "母語"
-      learn_language: "學習的語言"
       date: "日期"
       time: "時間"
       teach_language: "教你的語言"
@@ -43,6 +40,10 @@ zh-TW:
       study_with: "我想跟她一起學習！"
       cancel: "取消"
       accept: "跟他一起學習！"
+    user:
+      message: "留言"
+      native_language: "母語"
+      learn_language: "學習的語言"
     meeting:
       success: "成交"
       wanted: "招募中"

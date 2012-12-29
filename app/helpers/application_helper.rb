@@ -14,4 +14,8 @@ module ApplicationHelper
     end
     options.sort_by {|o| o[0] }
   end
+
+  def graph_facebook_picture_link(uid, size)
+    "https://graph.facebook.com/#{uid}/picture?type=#{size}"
+  end
 end

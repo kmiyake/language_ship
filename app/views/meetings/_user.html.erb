@@ -1,0 +1,17 @@
+<div class="well">
+  <b><%= status %></b>
+  <p><%= image_tag graph_facebook_picture_link(user.uid, "normal"), class: "img-circle" %></p>
+  <p><%= link_to user.name, "/#{user.profile_url}" %></p>
+  <b><%= t ".message" %></b>
+  <p>
+    <%= user.message %>
+  </p>
+  <b><%= t ".native_language" %></b>
+  <p>
+    <%= t user.native_language, scope: :language %>
+  </p>
+  <b><%= t ".learn_language" %></b>
+  <p>
+    <%= t user.learn_language, scope: :language %>
+  </p>
+</div>

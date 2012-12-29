@@ -29,9 +29,6 @@ ja:
     show:
       owner: "オーナー"
       guest: "ゲスト"
-      message: "メッセージ"
-      native_language: "母国語"
-      learn_language: "勉強中の言語"
       date: "日付"
       time: "時間"
       teach_language: "教える言語"
@@ -43,6 +40,10 @@ ja:
       study_with: "一緒に勉強したい！"
       cancel: "キャンセル"
       accept: "この人と一緒に勉強する"
+    user:
+      message: "メッセージ"
+      native_language: "母国語"
+      learn_language: "勉強中の言語"
     meeting:
       success: "成立"
       wanted: "募集中"
