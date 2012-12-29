@@ -1,5 +1,6 @@
 class AppointmentsController < ApplicationController
-  before_filter :login_required, :must_guest
+  before_filter :login_required
+  before_filter :must_guest, :except => :accept
 
   def new
     @meeting = Meeting.find(params[:meeting_id])
