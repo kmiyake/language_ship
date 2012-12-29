@@ -7,9 +7,9 @@ class SessionsController < ApplicationController
     else
       # FIXME welcome email design
       # TODO delay job
-      #UserMailer.welcome_email(user).deliver
+      UserMailer.welcome_email(user).deliver
       user.update_attribute(:getting_started, true)
-      redirect_to "/#{user.profile_url}/edit"
+      redirect_to edit_account_path
     end
   end
 
