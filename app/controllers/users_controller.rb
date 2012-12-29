@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_filter :login_required, only: [:edit, :update]
+
   def show
     @user = User.find_by_profile_url(params[:profile_url])
     @meetings = @user.meetings.order("date DESC")

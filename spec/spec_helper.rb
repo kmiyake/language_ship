@@ -1,5 +1,9 @@
 require 'spork'
 
+def sign_in(user)
+  controller.stub(:current_user) { user }
+end
+
 Spork.prefork do
   # Loading more in this block will cause your tests to run faster. However,
   # if you change any configuration or code from libraries loaded here, you'll
