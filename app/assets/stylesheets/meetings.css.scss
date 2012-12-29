@@ -1,0 +1,61 @@
+.meetings {
+  h2 {
+    border-bottom: solid 3px #08D;
+    color: #666;
+    font-size: 24px;
+    padding-left: 20px;
+    margin-bottom: 30px;
+  }
+  .header {
+    margin-bottom: 50px;
+    .field {
+      padding-left: 20px;
+    }
+  }
+}
+
+.meeting {
+  background-color: #fafafa;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  border: solid 1px #dddddd;
+  box-shadow: 0 0 5px #cccccc;
+  margin-bottom: 30px;
+  padding: 20px;
+  .user {
+    margin: 0 0 15px 0;
+    img {
+      float: left;
+      height: 101px;
+      margin: 0 auto;
+      position: relative;
+    }
+    b { font-size: 16px; }
+    p {
+      display: block;
+      margin: 0 0 0 115px;
+    }
+    .user-message {
+      color: #888;
+      font-size: 13px;
+    }
+  }
+  .meeting-info {
+    background-color: #ffffff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: solid 1px #dddddd;
+    padding: 5px;
+  }
+}
+
+.new_meeting {
+  .field {
+    padding-left: 20px;
+  }
+  .actions {
+    padding: 20px;
+  }
+}
