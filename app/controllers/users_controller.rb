@@ -5,7 +5,6 @@ class UsersController < ApplicationController
   end
 
   def edit
-    redirect_to "/#{current_user.profile_url}/edit" if current_user.profile_url != params[:profile_url]
     @user = current_user
   end
 
@@ -15,7 +14,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.update_attributes(params[:user])
         I18n.locale = @user.native_language
-        format.html { redirect_to root_url, notice: t('users.update.success') }
+        format.html { redirect_to user_profile_path(@user.profile_url), notice: t('users.update.success') }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

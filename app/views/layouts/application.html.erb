@@ -54,8 +54,8 @@
             </ul>
             <ul class="nav pull-right">
               <% if current_user %>
-                <li><%= link_to current_user.name, "/#{current_user.profile_url}" %></li>
-                <li><%= link_to t('.account_setting'), "/#{current_user.profile_url}/edit" %></li>
+                <li><%= link_to current_user.name, user_profile_path(current_user.profile_url) %></li>
+                <li><%= link_to t('.account_setting'), edit_account_path %></li>
                 <li><%= link_to t('.sign_out'), signout_path, id: "sign_out" %></li>
               <% else %>
                 <li><i class="social foundicon-facebook"></i><%= link_to t('.sign_in_with_facebook'), "/auth/facebook", id: "sign_in" %></li>

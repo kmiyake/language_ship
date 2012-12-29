@@ -16,10 +16,10 @@ LanguageShip::Application.routes.draw do
 
   resources :users, only: :update
 
-  get ':profile_url/edit', to: 'users#edit'
+  get '/edit/account', to: 'users#edit', as: 'edit_account'
   get ':profile_url/successes', to: 'users#successes'
   get ':profile_url/meetings', to: 'users#meetings'
-  get ':profile_url', to: 'users#show'
+  get ':profile_url', to: 'users#show', as: 'user_profile'
 
   match 'home' => 'home#show'
   root to: 'home#show'
