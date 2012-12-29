@@ -20,7 +20,10 @@ role :app, "languageship.com"
 role :web, "languageship.com"
 role :db,  "languageship.com", :primary => true
 
+after ("deploy:assets:symlink") do
+  run "ln -s /home/#{user}/config/#{application}/config.yml #{release_path}/config/config.yml"
+end
+
 after ("deploy:create_symlink") do
   run "ln -s /home/#{user}/config/#{application}/database.yml #{release_path}/config/database.yml"
-  run "ln -s /home/#{user}/config/#{application}/config.yml #{release_path}/config/config.yml"
 end 
