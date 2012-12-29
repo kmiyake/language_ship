@@ -2,12 +2,11 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+gem 'http_accept_language'
 
-gem 'thin'
-gem 'sqlite3'
+# database
 gem 'mysql2'
+gem 'sqlite3'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -21,30 +20,28 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+# web
 gem 'jquery-rails'
-
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# To use debugger
-# gem 'debugger'
 gem 'twitter-bootstrap-rails', :group => :assets
+
+# authenticate
 gem 'omniauth-facebook'
 
 group :development, :test do
+  # To use debugger
+  gem 'debugger'
+  # rspec goodies
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'database_cleaner'
+end
+
+group :development do
   # Deploy with Capistrano
   gem 'capistrano'
   gem 'rvm-capistrano'
-
-  # rspec goodies
-  gem 'rspec-rails'
-  gem 'factory_girl_rails'
+  gem 'letter_opener'
 end
 
 group :test do
@@ -56,11 +53,10 @@ group :test do
   gem 'guard-bundler'
   gem 'guard-rspec'
   gem 'guard-spork'
+  gem 'factory_girl_rails'
 
   # optionals
   gem 'growl'
   gem 'rb-fsevent', '~> 0.9.1'
 end
 
-gem 'letter_opener', :group => :development
-gem 'http_accept_language'

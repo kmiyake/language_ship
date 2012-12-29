@@ -10,6 +10,7 @@ Spork.prefork do
   require File.expand_path("../../config/environment", __FILE__)
   require 'rspec/rails'
   require 'factory_girl'
+  require 'capybara/rspec'
 end
 
 Spork.each_run do
@@ -20,6 +21,7 @@ Spork.each_run do
   # This code will be run each time you run your specs.
   RSpec.configure do |config|
     config.mock_with :rspec
+    config.include Capybara::DSL
 
     config.use_transactional_fixtures = true
   end
