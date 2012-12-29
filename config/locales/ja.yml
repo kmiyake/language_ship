@@ -77,6 +77,7 @@ ja:
       user_language_exchange_list: "%{user}の言語交換リスト"
     edit:
       account_setting: "アカウント設定"
+      private: "非公開"
       submit: "登録"
     update:
       success: "アカウント設定を更新しました。"
