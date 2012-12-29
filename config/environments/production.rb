@@ -54,8 +54,8 @@ LanguageShip::Application.configure do
     :address              => "languageship.com",
     :port                 => 25,
     :domain               => 'languageship.com',
-    :user_name            => AppConfig["defaults"]["mail"]["user"],
-    :password             => AppConfig["defaults"]["mail"]["password"],
+    :user_name            => AppConfig["mail"]["user"],
+    :password             => AppConfig["mail"]["password"],
     :authentication       => 'plain',
     :enable_starttls_auto => true  }
 
