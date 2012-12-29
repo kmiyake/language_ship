@@ -3,13 +3,13 @@ class SessionsController < ApplicationController
     user = User.from_omniauth(env["omniauth.auth"])
     session[:user_id] = user.id
     if user.getting_started
-      redirect_to root_url
-    else
       # FIXME welcome email design
       # TODO delay job
       UserMailer.welcome_email(user).deliver
       user.update_attribute(:getting_started, true)
-      redirect_to edit_account_path
+      redirect_to edit_account_url
+    else
+      redirect_to meetings_url
     end
   end
 
