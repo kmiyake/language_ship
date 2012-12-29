@@ -4,9 +4,10 @@ class AppointmentsController < ApplicationController
 
   def new
     @meeting = Meeting.find(params[:meeting_id])
+    @owner = @meeting.user
     @appointment = @meeting.appointments.build(
       sender_id: current_user.id,
-      recipient_id: @meeting.user_id
+      recipient_id: @owner.id
     )
   end
 

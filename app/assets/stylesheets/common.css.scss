@@ -1,0 +1,24 @@
+body {
+  color: #666;
+  background-color: #F4F0E6;
+  font-family: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'ＭＳ Ｐゴシック', 'MS PGothic', Helvetica, Arial, sans-serif;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+}
+
+a > img {
+  text-decoration: none;
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.field {
+  margin-bottom: 10px;
+  label {
+    text-decoration: underline;
+  }
+}

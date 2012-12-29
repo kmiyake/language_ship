@@ -51,9 +51,18 @@
   }
 }
 
-.new_meeting {
+.new_meeting, .edit_meeting {
+  label {
+    display: inline;
+  }
   .field {
     padding-left: 20px;
+    .accent {
+      color: #ff6600;
+    }
+    .help-block {
+      color: #999;
+    }
   }
   .actions {
     padding: 20px;

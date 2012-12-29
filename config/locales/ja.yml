@@ -101,6 +101,8 @@ ja:
       accept_message_for_text: "%{owner_name}さんが%{meeting_date}の言語交換を承認しました。"
       meeting_page: "言語交換ページ"
       profile_page: "ユーザページ"
+  errors:
+    format: "%{attribute}%{message}"
   activerecord:
     errors:
       models:

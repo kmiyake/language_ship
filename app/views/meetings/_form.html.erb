@@ -13,22 +13,30 @@
   <h2><%= t page_title %></h2>
   <div class="field">
     <%= f.label :date %>
+    <span class="accent">*</span>
+    <br>
     <%= f.date_select :date, {}, class: "input-small" %>
   </div>
   <div class="field">
     <%= f.label :start_time %>
+    <span class="accent">*</span>
+    <br>
     <%= select_hour @meeting.start_hour.to_i, {},  name: "meeting[start_hour]", class: "input-small" %> :
     <%= select_minute @meeting.start_minute.to_i, { :minute_step => 15 },
-      name: "meeting[start_minute]", class: "input-small" %>
+    name: "meeting[start_minute]", class: "input-small" %>
   </div>
   <div class="field">
     <%= f.label :end_time %>
+    <span class="accent">*</span>
+    <br>
     <%= select_hour @meeting.end_hour.to_i, {}, name: "meeting[end_hour]", class: "input-small" %> :
     <%= select_minute @meeting.end_minute.to_i, { :minute_step => 15 },
-      name: "meeting[end_minute]", class: "input-small" %>
+    name: "meeting[end_minute]", class: "input-small" %>
   </div>
   <div class="field">
     <%= f.label :location %>
+    <span class="accent">*</span>
+    <br>
     <span class="help-block">
       <%= t('location_explain').html_safe %>
     </span>
@@ -36,6 +44,8 @@
   </div>
   <div class="field">
     <%= f.label :address %>
+    <span class="accent">*</span>
+    <br>
     <span class="help-block">
       <%= t('address_explain').html_safe %>
     </span>
@@ -43,14 +53,19 @@
   </div>
   <div class="field">
     <%= f.label :message %>
+    <br>
     <%= f.text_area :message, rows: "4", class: "span4" %>
   </div>
   <div class="field">
     <%= f.label :teach_language %>
+    <span class="accent">*</span>
+    <br>
     <%= f.select :teach_language, translation_language_options, selected: current_user.native_language %>
   </div>
   <div class="field">
     <%= f.label :study_language %>
+    <span class="accent">*</span>
+    <br>
     <%= f.select :study_language, translation_language_options, selected: current_user.learn_language %>
   </div>
   <div class="actions">

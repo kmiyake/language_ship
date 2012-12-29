@@ -62,5 +62,8 @@ module LanguageShip
     config.generators do |g|
       g.test_framework :rspec
     end
+
+    # Don't need add field_with_errors
+    config.action_view.field_error_proc = proc { |input, instance| input }
   end
 end
