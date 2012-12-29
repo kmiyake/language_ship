@@ -4,18 +4,6 @@ body {
   font-family: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'ＭＳ Ｐゴシック', 'MS PGothic', Helvetica, Arial, sans-serif;
 }
 
-h2 {
-  display: block;
-  width: 100%;
-  padding: 0;
-  margin-bottom: 20px;
-  font-size: 21px;
-  line-height: 40px;
-  color: #333;
-  border: 0;
-  border-bottom: 1px solid #D5D5D5;
-}
-
 ul {
   list-style-type: none;
   margin: 0;
@@ -80,32 +68,6 @@ a > img {
     text-decoration: underline;
   }
 }
-
-.home {
-  .welcome {
-    text-align: center;
-    h1 {
-      font-size: 80px;
-      line-height: 1.4;
-    }
-    .description {
-      p {
-        color: #888888;
-        font-size: 20px;
-      }
-    }
-    // .description
-    .users {
-      a {
-        text-align: center;
-      }
-    }
-    // .users
-  }
-  // .welcome
-}
-// .home
-
 .meetings {
   .header {
     margin-bottom: 30px;
@@ -180,28 +142,3 @@ a > img {
     }
   }
 }
-
-//.page-title {
-//  display: block;
-//  width: 100%;
-//  padding: 0;
-//  margin-bottom: 20px;
-//  font-size: 21px;
-//  line-height: 40px;
-//  color: #333;
-//  border: 0;
-//  border-bottom: 1px solid #E5E5E5;
-//}
-//
-//.heading {
-//  display: block;
-//  width: 100%;
-//  padding: 0;
-//  margin-bottom: 20px;
-//  font-size: 21px;
-//  line-height: 40px;
-//  color: #333;
-//  border: 0;
-//  border-bottom: 1px solid #E5E5E5;
-//}
-//

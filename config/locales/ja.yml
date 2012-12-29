@@ -10,6 +10,12 @@ ja:
     show:
       sign_in_with_facebook: "Facebookでログイン"
       description: "言語交換を始めよう"
+      recruite_meeting: "募集する"
+      search_meeting: "探す"
+      study_together: "一緒に勉強する"
+      howto_1: "自分が空いている時間、教えられる言語、教えて欲しい言語を登録して言語交換できる相手を募集しよう。"
+      howto_2: "自分が教えられる言語、教えて欲しい言語にマッチした言語交換の相手を探そう。"
+      howto_3: "相手が見つかったら自分が教えて欲しいことをまとめて、いざ言語交換へ！"
   meetings:
     index:
       search_meetings: "言語交換を探す"

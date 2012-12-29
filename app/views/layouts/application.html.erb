@@ -69,15 +69,15 @@
     <div class="container">
       <div class="content">
         <div class="row">
-          <div class="span12">
-            <% if flash[:notice] %>
+          <% if flash[:notice] %>
+            <div class="span12">
               <div class="alert alert-success">
                 <button type="button" class="close" data-dismiss="alert">×</button>
                 <%= flash[:notice] %>
               </div>
-            <% end %>
-            <%= yield %>
-          </div>
+            </div>
+          <% end %>
+          <%= yield %>
         </div><!--/row-->
       </div><!--/content-->
 

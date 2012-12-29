@@ -1,16 +1,36 @@
-<div class="welcome">
-  <h1>LanguageShip</h1>
-  <div class="description">
-    <p><%= t '.description' %></p>
-  </div>
-  <% unless current_user %>
-    <p><%= link_to t('.sign_in_with_facebook'), "/auth/facebook", id: "sign_in", class: "btn btn-large btn-primary" %></p>
-  <% end %>
-  <p class="users">
-    <% @users.each do |user| %>
-      <%= link_to "/#{user.profile_url}" do %>
-        <%= image_tag "https://graph.facebook.com/#{user.uid}/picture?type=small", class: "img-circle" %>
-      <% end %>
+<div class="span12">
+  <div class="top">
+    <h1>LanguageShip</h1>
+    <h2><%= t ".description" %></h2>
+    <% unless current_user %>
+      <p><%= link_to t(".sign_in_with_facebook"), "/auth/facebook", id: "sign_in", class: "btn btn-large btn-primary" %></p>
     <% end %>
-  </p>
+    <div class="users">
+      <% @users.each do |user| %>
+        <%= link_to "/#{user.profile_url}", class: "image-link" do %>
+          <%= image_tag "https://graph.facebook.com/#{user.uid}/picture?type=small", class: "img-circle" %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class="row howto">
+    <div class="span4">
+      <div class="box">
+        <h3><%= t ".recruite_meeting" %></h3>
+        <p><%= t ".howto_1" %></p>
+      </div>
+    </div>
+    <div class="span4">
+      <div class="box">
+        <h3><%= t ".search_meeting" %></h3>
+        <p><%= t ".howto_2" %></p>
+      </div>
+    </div>
+    <div class="span4">
+      <div class="box">
+        <h3><%= t ".study_together" %></h3>
+        <p><%= t ".howto_3" %></p>
+      </div>
+    </div>
+  </div>
 </div>

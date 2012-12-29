@@ -10,6 +10,12 @@ zh-TW:
     show:
       sign_in_with_facebook: "用Facebook登入"
       description: "從現在開始語言交換"
+      recruite_meeting: "招募"
+      search_meeting: "尋找"
+      study_together: "一起學習"
+      howto_1: "登記自己有空的時間，能教的語言，想學習的語言募集能語言交換的朋友。"
+      howto_2: "尋找能教的語言跟想學習的語言調和的語言交換的朋友。"
+      howto_3: "如果你找得到語言交換朋友，判明自己想學習什麼，就去語言交換吧！"
   meetings:
     index:
       search_meetings: "尋找言語交換朋友"

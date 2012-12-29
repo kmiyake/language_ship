@@ -1,0 +1,39 @@
+.home {
+  h1 {
+    color: #333;
+    font-size: 80px;
+    line-height: 1.4;
+  }
+  h2 {
+    color: #666;
+    font-size: 35px;
+  }
+  h3 {
+    border-bottom: solid 5px #08C;
+    text-align: center;
+  }
+  .top {
+    text-align: center;
+  }
+  .description {
+    color: #888888;
+    font-size: 20px;
+    text-align: center;
+  }
+  .users {
+    padding: 20px 0;
+  }
+  .image-link {
+    text-decoration: none;
+  }
+  .howto {
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+      padding: 5px;
+    }
+  }
+  .box {
+    padding: 0 20px;
+  }
+}
