@@ -6,6 +6,7 @@ set :scm, "git"
 set :user, ENV["DEPLOY_USER"]
 set :use_sudo, false 
 ssh_options[:port] = ENV["SSH_PORT"]
+ssh_options[:keys] = ENV["SSH_KEY"]
 
 require 'rvm/capistrano'
 set :rvm_ruby_string, '1.9.3'
