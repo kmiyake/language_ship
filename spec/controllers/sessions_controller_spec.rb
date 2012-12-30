@@ -22,8 +22,8 @@ describe SessionsController do
     user = FactoryGirl.create(:user, getting_started: true)
     env = return_omniauth_env(user)
     controller.stub!(:env).and_return(env)
-    controller.stub!(:current_user).and_return(user)
     get :create
+    sign_in(user)
     response.should redirect_to edit_account_path
   end
   
@@ -31,8 +31,8 @@ describe SessionsController do
     user = FactoryGirl.create(:user, getting_started: false)
     env = return_omniauth_env(user)
     controller.stub!(:env).and_return(env)
-    controller.stub!(:current_user).and_return(user)
     get :create
+    sign_in(user)
     response.should redirect_to meetings_path
   end
 
