@@ -10,7 +10,7 @@ describe AppointmentsController do
 
     context "logged in" do
       before do
-        session[:user_id] = @guest.id
+        sign_in(@guest)
       end
 
       it "should be success" do
@@ -30,9 +30,21 @@ describe AppointmentsController do
       end
 
       it "redirects to root url if current user == meeting owner user" do
-        session[:user_id] = @owner.id
+        sign_in(@owner)
         get :new, meeting_id: @meeting
         response.should redirect_to root_url
+      end
+
+      context "already apply meeting" do
+        it "redirects to meeting url" do
+          post :create, meeting_id: @meeting.id,
+            appointment: FactoryGirl.attributes_for(
+              :appointment,
+              :sender_id => @guest.id,
+              :recipient_id => @owner.id)
+          get :new, meeting_id: @meeting
+          response.should redirect_to @meeting
+        end
       end
     end
 
