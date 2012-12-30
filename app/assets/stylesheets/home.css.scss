@@ -1,12 +1,16 @@
 .home {
   h1 {
     color: #333;
-    font-size: 80px;
     line-height: 1.4;
   }
-  h2 {
-    color: #666;
-    font-size: 35px;
+  h2 { color: #666; }
+  @media screen and (min-width: 421px) {
+    h1 { font-size: 80px; }
+    h2 { font-size: 35px; }
+  }
+  @media  screen and (max-width: 420px) {
+    h1 { font-size: 40px; }
+    h2 { font-size: 25px; }
   }
   h3 {
     border-bottom: solid 5px #08C;
