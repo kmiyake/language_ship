@@ -23,7 +23,6 @@ describe SessionsController do
     env = return_omniauth_env(user)
     controller.stub!(:env).and_return(env)
     get :create
-    sign_in(user)
     response.should redirect_to edit_account_path
   end
   
@@ -32,7 +31,6 @@ describe SessionsController do
     env = return_omniauth_env(user)
     controller.stub!(:env).and_return(env)
     get :create
-    sign_in(user)
     response.should redirect_to meetings_path
   end
 
