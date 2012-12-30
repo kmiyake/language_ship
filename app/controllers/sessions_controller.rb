@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
       # FIXME welcome email design
       # TODO delay job
       UserMailer.welcome_email(user).deliver
-      user.update_attribute(:getting_started, true)
+      user.update_attribute(:getting_started, false)
       redirect_to edit_account_url
     else
       redirect_to meetings_url
